@@ -1,12 +1,30 @@
-# React + Vite
+# 🧑‍💻 Lista de Usuários (Random User API)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Visão Geral do Projeto
 
-Currently, two official plugins are available:
+Este projeto é uma aplicação Single Page Application (SPA) construída com **React** que interage com a **Random User Generator API**. O objetivo é exibir uma lista de perfis de usuários, implementando funcionalidades essenciais de front-end, como **paginação** e **filtragem de dados** por nacionalidade.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+* **Exibição de Perfis:** Carrega e exibe 16 perfis de usuários por página.
+* **Paginação:** Navegação entre páginas (Próxima e Anterior) para buscar novos conjuntos de dados.
+* **Filtro por Nacionalidade (País):** Permite buscar usuários de um país específico utilizando o código ISO (Ex: `BR` para Brasil, `US` para Estados Unidos).
+* **Controle de Estado:** Gerenciamento do estado da aplicação (`count` da página, `searchUser` para filtro) usando `useState` e sincronização de dados com `useEffect`.
+* **Experiência do Usuário (UX):** Rolagem suave automática para o topo (`backToTop`) a cada mudança de página, melhorando a usabilidade.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologias Utilizadas
+
+* **React** (Funcional Components e Hooks)
+* **JavaScript (ES6+)**
+* **Fetch API** (para requisições assíncronas)
+* **HTML5 / CSS3**
+
+## 📂 Estrutura de Componentes
+
+O projeto utiliza uma abordagem de componentes reutilizáveis:
+
+| Componente | Função Principal | Descrição |
+| :--- | :--- | :--- |
+| `App.js` | **Lógica de Estado e API** | Gerencia os estados (`people`, `count`, `searchUser`), realiza a busca na API (`getData`) e orquestra a paginação e o filtro. |
+| `Button.js` | **Interação de Paginação** | Componente reutilizável para botões, usado para as ações de `nextPage` e `previewPage`. |
+| `SearchInput.js` | **Interação de Filtro** | Componente reutilizável para entrada de texto, usado para capturar o código de nacionalidade. |
